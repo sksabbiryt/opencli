@@ -82,12 +82,14 @@ export function getDefaultMcpConfigPaths(cwd: string = process.cwd()): string[] 
     path.join(home, '.codex', 'config.toml'),
     path.join(home, '.codex', 'mcp.json'),
     path.join(home, '.cursor', 'mcp.json'),
+    path.join(home, '.claude.json'),
     path.join(home, '.config', 'opencode', 'opencode.json'),
     path.join(home, 'Library', 'Application Support', 'Claude', 'claude_desktop_config.json'),
     path.join(home, '.config', 'Claude', 'claude_desktop_config.json'),
     path.join(cwd, '.cursor', 'mcp.json'),
     path.join(cwd, '.vscode', 'mcp.json'),
     path.join(cwd, '.opencode', 'opencode.json'),
+    path.join(cwd, '.mcp.json'),
   ];
   return [...new Set(candidates)];
 }
